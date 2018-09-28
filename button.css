@@ -1,35 +1,51 @@
-body {
+/*body {
     background-color: #333;
+}*/
+
+
+
+body {
+	background: #36353c;
 }
 
-.buttonripple {
-    font-family: "Roboto";
-    font-size: 24px;
-    padding: 1em 2em;
-    margin: 3px;
-    border: 0;
-    outline: 0;
-    color: white;
-    background-color: #2196F3;
-    text-transform: uppercase;
-    border-radius: 0.15em;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-
-    overflow: hidden;
-    position: relative;
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50px;
+	width: 200px;
+	margin: auto;
+}
+*[data-animation="ripple"] {
+	height: 100%;
+	width: 100%;
+	display: block;
+	outline: none;
+	padding: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	background: linear-gradient(135deg, #e570e7 0%,#79f1fc 100%);
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 14px;
+	font-family: roboto, helvetica;
+	font-weight: 200;
+	letter-spacing: 1px;
+	text-decoration: none;
+	box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+  /*border-radius: 50px;*/
+	-webkit-tap-highlight-color: transparent;
+	border-radius: 5px;
 }
 
-.buttonripple .ripple {
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    transform: scale(0);
-    animation: ripple 0.6s linear;
+*[data-animation="ripple"]:focus {
+	outline: none;
 }
 
-@keyframes ripple {
-    to {
-        transform: scale(2.5);
-        opacity: 0;
-    }
+*[data-animation="ripple"]::selection {
+	background: transparent;
+	pointer-events: none;
 }
